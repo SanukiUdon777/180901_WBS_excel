@@ -1,0 +1,43 @@
+        ElseIf NowPriority < NextPriority _
+            And NowWorkStartDay >= NextWorkStartDay Then
+            '1.現在選択中の案件より、　比較対象の案件の方が優先度が高い　&　開始時期が早い!!!
+            
+                NowProject = NextProject
+                NowCharge = NextCharge
+                NowPriority = NextPriority
+                NowChargeStart = NextChargeStart
+                NowProjectStart = NextProjectStart
+                NowWorkStartDay = NextWorkStartDay
+                NowProgress = NextProgress
+                ChangeTask = SerchCount
+     
+     
+        ElseIf NowPriority = NextPriority _
+            And NowWorkStartDay > NextWorkStartDay Then
+            '2.現在選択中の案件より、　比較対象の案件の方が優先度が同じ　&　開始時期が早い!!!
+            
+                NowProject = NextProject
+                NowCharge = NextCharge
+                NowPriority = NextPriority
+                NowChargeStart = NextChargeStart
+                NowProjectStart = NextProjectStart
+                NowWorkStartDay = NextWorkStartDay
+                NowProgress = NextProgress
+                ChangeTask = SerchCount
+     
+     
+        ElseIf NowWorkStartDay > NextWorkStartDay _
+            And NowWorkStartDay > NextWorkEndDay Then
+            '3.現在選択中の案件が、　比較案件より開始時期が遅い(条件1、2以外の項目抽出)　&　比較案件の終了時期より開始時期が遅い!!!
+          
+                NowProject = NextProject
+                NowCharge = NextCharge
+                NowPriority = NextPriority
+                NowChargeStart = NextChargeStart
+                NowProjectStart = NextProjectStart
+                NowWorkStartDay = NextWorkStartDay
+                NowProgress = NextProgress
+                ChangeTask = SerchCount
+          
+          
+        End If
